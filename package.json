@@ -1,0 +1,43 @@
+{
+  "name": "wasaas",
+  "version": "0.1.0",
+  "description": "Official Node.js SDK for the Wasaas WhatsApp API",
+  "keywords": ["whatsapp", "api", "sdk", "messaging", "wasaas", "whatsapp-api"],
+  "homepage": "https://wasaas.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wasaas/wasaas-node"
+  },
+  "bugs": {
+    "url": "https://github.com/wasaas/wasaas-node/issues"
+  },
+  "license": "MIT",
+  "author": "Wasaas <support@wasaas.org>",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
+    "dev": "tsup src/index.ts --format esm,cjs --dts --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.0",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
