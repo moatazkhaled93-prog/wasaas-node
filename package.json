@@ -6,7 +6,7 @@
   "homepage": "https://wasaas.org",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wasaas/wasaas-node"
+    "url": "git+https://github.com/Moatazkhaled93/wasaas-node.git"
   },
   "bugs": {
     "url": "https://github.com/wasaas/wasaas-node/issues"
