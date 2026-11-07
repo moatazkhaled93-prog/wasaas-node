@@ -2,7 +2,9 @@
 
 Official Node.js SDK for the [Wasaas WhatsApp API](https://wasaas.org).
 
-Send WhatsApp messages, receive webhooks, and check numbers — all from a clean, typed interface.
+Send WhatsApp messages and check numbers — all from a clean, typed interface. No Meta Business account or app review required: connect a regular WhatsApp number via QR code.
+
+Full endpoint reference (auth, fields, error codes): [wasaas.org/docs](https://wasaas.org/docs?utm_source=github&utm_medium=readme&utm_campaign=wasaas-node).
 
 ## Install
 
@@ -35,7 +37,7 @@ await client.messages.sendText({
 });
 ```
 
-Get your API key at [wasaas.org](https://wasaas.org) — plans start at $29/month with a 7-day money-back guarantee.
+Get your API key at [wasaas.org](https://wasaas.org/register?utm_source=github&utm_medium=readme&utm_campaign=wasaas-node) — start with a 7-day free trial, no credit card required. See [pricing](https://wasaas.org/pricing) for plan limits.
 
 ---
 
@@ -229,22 +231,18 @@ app.post("/notify-order", express.json(), async (req, res) => {
 });
 ```
 
-## Usage with webhooks
+## Reacting to incoming messages
 
-Configure an incoming webhook in the [Wasaas dashboard](https://wasaas.org/customer/dashboard). Your endpoint receives a POST for every incoming message:
+Outbound webhook delivery to your own server (a POST for every incoming
+message) is **not available yet** — this README previously documented a
+`message.received` webhook that was never actually built or shipped; that
+section has been removed so it doesn't mislead anyone integrating against it.
 
-```typescript
-app.post("/whatsapp-hook", express.json(), (req, res) => {
-  const { event, data } = req.body;
-
-  if (event === "message.received") {
-    console.log(`From ${data.from}: ${data.message}`);
-    // trigger your reply logic here
-  }
-
-  res.sendStatus(200);
-});
-```
+Today, the supported way to react to incoming WhatsApp messages is the
+dashboard's built-in **chatbot flows** (keyword-triggered auto-replies),
+configured at [wasaas.org/customer/dashboard](https://wasaas.org/customer/dashboard/chatbot).
+If your use case needs your own server to receive every inbound message,
+that is a real gap today — see [wasaas.org/docs](https://wasaas.org/docs?utm_source=github&utm_medium=readme&utm_campaign=wasaas-node) for the current API surface before building around it.
 
 ---
 
