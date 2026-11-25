@@ -6,10 +6,10 @@
   "homepage": "https://wasaas.org",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Moatazkhaled93/wasaas-node.git"
+    "url": "git+https://github.com/moatazkhaled93-prog/wasaas-node.git"
   },
   "bugs": {
-    "url": "https://github.com/wasaas/wasaas-node/issues"
+    "url": "https://github.com/moatazkhaled93-prog/wasaas-node/issues"
   },
   "license": "MIT",
   "author": "Wasaas <support@wasaas.org>",
