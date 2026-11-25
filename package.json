@@ -1,6 +1,6 @@
 {
   "name": "wasaas",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Official Node.js SDK for the Wasaas WhatsApp API",
   "keywords": ["whatsapp", "api", "sdk", "messaging", "wasaas", "whatsapp-api"],
   "homepage": "https://wasaas.org",
